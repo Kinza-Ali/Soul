@@ -1,0 +1,115 @@
+export const products = [
+  {
+    id: 1,
+    productName: 'dress',
+    productType: 1,
+    price: 50,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 2,
+    productName: 'bag',
+    productType: 2,
+    price: 50,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 3,
+    productName: 'dress',
+    productType: 1,
+    price: 50,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 4,
+    productName: 'shoes',
+    productType: 3,
+    price: 50,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 5,
+    productName: 'dress',
+    productType: 1,
+    price: 5,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 6,
+    productName: 'jewellery',
+    productType: 4,
+    price: 50,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+  {
+    id: 7,
+    productName: 'dress',
+    productType: 1,
+    price: 500,
+    quantity: 200,
+    image: require('../assets/clothes.jpeg'),
+  },
+  {
+    id: 8,
+    productName: 'jewellery',
+    productType: 4,
+    price: 500,
+    quantity: 200,
+    image: require('../assets/test.jpeg'),
+  },
+];
+export const category = [
+  {
+    id: 1,
+    name: 'Clothing',
+    icon: require('../assets/clothes.jpeg'),
+  },
+  {
+    id: 2,
+    name: 'Bags',
+    icon: require('../assets/bag.jpeg'),
+  },
+  {
+    id: 3,
+    name: 'Shoes',
+    icon: require('../assets/shoes.jpeg'),
+  },
+  {
+    id: 4,
+    name: 'Jewellry',
+    icon: require('../assets/jewellery.jpeg'),
+  },
+];
+
+export const CartData = [
+  {
+    id: 1,
+    productName: 'dress',
+    productType: 1,
+    price: 50,
+    image: require('../assets/test.jpeg'),
+    quantity: 1,
+  },
+  {
+    id: 2,
+    productName: 'dress',
+    productType: 1,
+    price: 50,
+    image: require('../assets/test.jpeg'),
+    quantity: 1,
+  },
+  {
+    id: 3,
+    productName: 'dress',
+    productType: 1,
+    price: 50,
+    image: require('../assets/test.jpeg'),
+    quantity: 1,
+  },
+];
