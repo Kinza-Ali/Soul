@@ -20,8 +20,8 @@ const SignUp = ({navigation}) => {
       .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     contact: Yup.string()
-      .min(14, 'Must be 14 digit number')
-      .max(14, 'Must be 14 digit numer')
+      .min(11, 'Must be 11 digit number')
+      .max(11, 'Must be 11 digit numer')
       .required(),
     password: Yup.string().min(6, 'Must be 6 character long').required(),
   });

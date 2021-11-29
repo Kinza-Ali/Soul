@@ -25,8 +25,8 @@ const Checkout = ({navigation, route}) => {
       .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     phone: Yup.string()
-      .min(14, 'Must be 14 digit number')
-      .max(14, 'Must be 14 digit numer')
+      .min(11, 'Must be 11 digit number')
+      .max(11, 'Must be 11 digit numer')
       .required('Enter phone number'),
     country: Yup.string().required(),
     city: Yup.string().required(),
