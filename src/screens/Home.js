@@ -51,6 +51,9 @@ const Home = ({navigation}) => {
 
   useEffect(() => {
     dispatch(getProducts());
+  }, []);
+  useEffect(() => {
+    dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
