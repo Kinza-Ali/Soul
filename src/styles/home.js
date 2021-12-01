@@ -26,6 +26,7 @@ export const HeaderText = styled.Text`
 
 export const FlatListView = styled.View`
   margin-top: 10px;
+  flex: 1;
 `;
 
 //MainCategory styling

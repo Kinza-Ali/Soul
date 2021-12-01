@@ -45,14 +45,14 @@ export const RenderInfo = styled.View`
 
 export const QuantityView = styled.View`
   position: absolute;
-  width: 120px;
+  width: 100px;
   height: 50px;
   flex-direction: row;
   margin-left: 230px;
 `;
 
 export const DcereaseQuantityButton = styled.TouchableOpacity`
-  width: 30px;
+  width: 25px;
   background-color: white;
   align-item: center;
   justify-content: center;
@@ -61,26 +61,26 @@ export const DcereaseQuantityButton = styled.TouchableOpacity`
 `;
 
 export const DcereaseQuantityText = styled.Text`
-  font-size: 30px;
+  font-size: 20px;
   line-height: 36px;
-  margin-left: 20px;
+  margin-left: 10px;
 `;
 
 export const QuantityButton = styled.TouchableOpacity`
-  width: 70px;
+  width: 50px;
   background-color: white;
   align-item: center;
   justify-content: center;
 `;
 
 export const QuantityText = styled.Text`
-  font-size: 23px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 36px;
   margin-left: 20px;
 `;
 
 export const IncreaseQuantityButton = styled.TouchableOpacity`
-  width: 30px;
+  width: 20px;
   background-color: white;
   align-item: center;
   justify-content: center;
@@ -89,7 +89,7 @@ export const IncreaseQuantityButton = styled.TouchableOpacity`
 `;
 
 export const IncreaseQuantityText = styled.Text`
-  font-size: 30px;
+  font-size: 20px;
   line-height: 36px;
 `;
 

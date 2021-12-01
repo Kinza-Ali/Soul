@@ -1,10 +1,10 @@
 import {Dimensions} from 'react-native';
 import styled from 'styled-components';
-const width = Dimensions.get('screen').width / 2 - 30;
+const value = Dimensions.get('screen').width / 2 - 50;
 export const TouchBtn = styled.TouchableOpacity`
   height: 225px;
   background-color: rgb(219, 226, 226);
-  width: 170px
+  width: ${value}
   margin-horizontal: 2px;
   border-radius: 10px;
   margin-bottom: 20px;
