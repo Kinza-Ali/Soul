@@ -1,7 +1,7 @@
 import {Dimensions} from 'react-native';
 import styled from 'styled-components';
 const width = Dimensions.get('screen').width / 2 - 30;
-export const CardView = styled.View`
+export const TouchBtn = styled.TouchableOpacity`
   height: 225px;
   background-color: rgb(219, 226, 226);
   width: 170px
@@ -9,9 +9,10 @@ export const CardView = styled.View`
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 15px;
-  margin-left:20px
+  margin-left:3px
   margin-right:20px
 `;
+export const CardView = styled.View``;
 export const SubView = styled.View`
   align-items: flex-end;
 `;

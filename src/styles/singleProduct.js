@@ -11,19 +11,19 @@ export const MainView = styled.View`
 `;
 
 export const SubView = styled.View`
-  height: 450px;
+  height: 400px;
 `;
 
 export const ProductImage = styled.Image`
   width: 310px;
   height: 300px;
-  margin-top: 20px;
+  margin-top: -20px;
   margin-left: 50px;
 `;
 
 export const QuantityView = styled.View`
   position: absolute;
-  bottom: 110px;
+  bottom: 100px;
   width: 148px;
   height: 45px;
   justify-content: center;
@@ -81,7 +81,7 @@ export const ProductTitleView = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
   padding-horizontal: 20px;
 `;
 
@@ -110,7 +110,7 @@ export const PriceTitle = styled.Text`
 `;
 export const ProductDescriptionView = styled.View`
   padding-horizontal: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 export const ProductQuantityView = styled.View`
   padding-horizontal: 20px;
@@ -145,7 +145,8 @@ export const MainOrderView = styled.View`
   border-top-left-radius: 40px;
   height:100%
   background-color: #F1F1F1;
-  margin-top:-40px
+  margin-top:-90px
+  
 `;
 
 export const SubOrderView = styled.View`
@@ -159,7 +160,7 @@ export const SubOrderView = styled.View`
 export const ItemText = styled.Text`
   font-size: 20px;
   font-weight: bold;
-  line-height: 30px;
+  line-height: 20px;
   margin-left: -10px;
 `;
 // Add to cart or proceed to checkout buttons
@@ -167,15 +168,15 @@ export const ViewButtons = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 7px;
 `;
 
 export const Btn = styled.TouchableOpacity`
 border-radius:30px
 background-color:#0353a4;
-margin-bottom:20px
+margin-bottom:10px
 padding:8px;
-height:45px
+height:40px
 width: 250px;
 `;
 export const ButtonText = styled.Text`

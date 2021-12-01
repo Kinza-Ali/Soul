@@ -1,7 +1,7 @@
 import Services from './Services';
 
 class ProductService extends Services {
-  getProducts = () => this.get('product');
+  getProductList = () => this.get('product');
   // getProductById = (_id) => this.get("product/" + _id);
   // addProduct = (data) => this.post("product", data);
   // deleteProduct = (_id) => this.delete("product/" + _id);

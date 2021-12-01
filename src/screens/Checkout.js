@@ -7,6 +7,7 @@ import {RoundInputCheckout} from '../styles/input';
 import {RoundedCheckoutButton} from '../styles/button';
 import {CheckoutFormTitle, ErrorText, FormTitle, Title} from '../styles/text';
 import {addOrder} from '../redux/actions/orderActions';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const Checkout = ({navigation, route}) => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const Checkout = ({navigation, route}) => {
   const handleOrder = values => {
     getItems();
     var date = new Date();
-    orderData = {
+    const orderData = {
       item: items,
       deliveryDate:
         date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(),
@@ -59,7 +60,7 @@ const Checkout = ({navigation, route}) => {
   };
 
   return (
-    <View>
+    <ScrollView>
       <Formik
         initialValues={{
           name: '',
@@ -135,7 +136,7 @@ const Checkout = ({navigation, route}) => {
           </View>
         )}
       </Formik>
-    </View>
+    </ScrollView>
   );
 };
 

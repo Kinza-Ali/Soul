@@ -52,8 +52,13 @@ export const RoundedCheckoutButton = ({onPress, title}) => (
     <CheckoutButtonText>{title}</CheckoutButtonText>
   </RoundCheckoutButton>
 );
-export const RoundedLoginButton = ({onPress, title}) => (
-  <RoundLoginButton onPress={onPress}>
+export const RoundedSignOutoutButton = ({onPress, title, disabled}) => (
+  <RoundCheckoutButton onPress={onPress} disabled={disabled}>
+    <CheckoutButtonText>{title}</CheckoutButtonText>
+  </RoundCheckoutButton>
+);
+export const RoundedLoginButton = ({onPress, title, disabled}) => (
+  <RoundLoginButton onPress={onPress} disabled={disabled}>
     <CheckoutButtonText>{title}</CheckoutButtonText>
   </RoundLoginButton>
 );

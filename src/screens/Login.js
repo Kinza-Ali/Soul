@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Container, SubContainer} from '../styles/wrapper';
-import {View} from 'react-native';
+import {ActivityIndicator, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {RoundInput, InputContainer, RoundInputCheckout} from '../styles/input';
 import {LoginBackgroundImage} from '../styles/backgroundImage';
@@ -16,11 +16,34 @@ const Login = ({navigation}) => {
   const user = useSelector(state => state.allUser.user);
   const errorMessage = useSelector(state => state.allUser.error);
   const dispatch = useDispatch();
+  const [animating, setAnimating] = useState(false);
 
   const validateSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required(),
     password: Yup.string().min(6, 'Must be 6 character long').required(),
   });
+
+  useEffect(() => {
+    if (user && user._id) {
+      navigation.navigate('Home');
+    }
+  }, [user, user?._id]);
+
+  useEffect(() => {
+    if (errorMessage === "Email doesn't exist") {
+      setEmailError(errorMessage);
+      setPasswordError('');
+    } else {
+      setPasswordError(errorMessage);
+      setEmailError('');
+    }
+  }, [errorMessage]);
+
+  const closeActivityIndicator = () => {
+    setTimeout(() => {
+      setAnimating(false);
+    }, 5000);
+  };
 
   return (
     <Container>
@@ -35,17 +58,15 @@ const Login = ({navigation}) => {
             validationSchema={validateSchema}
             onSubmit={values => {
               dispatch(loginUser(values.email, values.password));
-              if (user && user._id) {
-                navigation.navigate('Home');
-              } else {
-                if (errorMessage === "Email doesn't exist") {
-                  setEmailError(errorMessage);
-                  setPasswordError('');
-                } else {
-                  setPasswordError(errorMessage);
-                  setEmailError('');
-                }
-              }
+              setAnimating(true);
+              closeActivityIndicator();
+              // if (errorMessage === "Email doesn't exist") {
+              //   setEmailError(errorMessage);
+              //   setPasswordError('');
+              // } else {
+              //   setPasswordError(errorMessage);
+              //   setEmailError('');
+              // }
             }}>
             {props => (
               <InputContainer>
@@ -69,8 +90,9 @@ const Login = ({navigation}) => {
                 <ErrorText> {passwordError}</ErrorText>
 
                 <RoundedLoginButton
-                  title="Login"
+                  title={animating ? <ActivityIndicator /> : 'Login'}
                   onPress={props.handleSubmit}
+                  disabled={animating}
                 />
               </InputContainer>
             )}

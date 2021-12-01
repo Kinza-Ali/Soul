@@ -1,9 +1,9 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, ActivityIndicator} from 'react-native';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {RoundInputCheckout} from '../styles/input';
-import {RoundedCheckoutButton} from '../styles/button';
+import {RoundedCheckoutButton, RoundedSignOutoutButton} from '../styles/button';
 import {CheckoutFormTitle, ErrorText, FormTitle, Title} from '../styles/text';
 import {useDispatch, useSelector} from 'react-redux';
 import {addUserData} from '../redux/actions/userActions';
@@ -11,8 +11,9 @@ import {addUserData} from '../redux/actions/userActions';
 const SignUp = ({navigation}) => {
   const dispatch = useDispatch();
   const errorMessage = useSelector(state => state.allUser.error);
+  const [animating, setAnimating] = useState(false);
   const user = useSelector(state => state.allUser.user);
-  console.log(user.email);
+
   const validateSchema = Yup.object().shape({
     name: Yup.string()
       .min(7, 'Too Short!')
@@ -25,6 +26,16 @@ const SignUp = ({navigation}) => {
       .required(),
     password: Yup.string().min(6, 'Must be 6 character long').required(),
   });
+
+  useEffect(() => {
+    if (user && user.email) {
+      navigation.navigate('Home');
+    }
+  }, [user, user?.email]);
+
+  const closeActivityIndicator = () => {
+    setTimeout(() => setAnimating(false), 6000);
+  };
 
   return (
     <View>
@@ -39,10 +50,8 @@ const SignUp = ({navigation}) => {
         onSubmit={values => {
           console.log(values);
           dispatch(addUserData(values));
-          // console.log(user.email);
-          if (!errorMessage) {
-            navigation.navigate('Home');
-          }
+          setAnimating(true);
+          closeActivityIndicator();
         }}>
         {props => (
           <View>
@@ -81,9 +90,10 @@ const SignUp = ({navigation}) => {
             />
             <ErrorText> {props.errors.contact}</ErrorText>
 
-            <RoundedCheckoutButton
-              title="SignUp"
+            <RoundedSignOutoutButton
+              title={animating ? <ActivityIndicator /> : 'SignUp'}
               onPress={props.handleSubmit}
+              disabled={animating}
             />
           </View>
         )}

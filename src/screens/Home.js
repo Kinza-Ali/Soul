@@ -33,6 +33,8 @@ import {
   CartView,
   AddText,
   IconView,
+  touchBtn,
+  TouchBtn,
 } from '../styles/card';
 import {getProducts} from '../redux/actions/productActions';
 
@@ -62,9 +64,10 @@ const Home = ({navigation}) => {
   };
   const Card = ({products}) => {
     return (
-      <TouchableOpacity
+      <TouchBtn
         onPress={() => {
           navigation.navigate('SingleProduct', products);
+          console.log('clicked');
         }}>
         <CardView>
           <SubView>
@@ -83,7 +86,7 @@ const Home = ({navigation}) => {
             </CartView>
           </PriceView>
         </CardView>
-      </TouchableOpacity>
+      </TouchBtn>
     );
   };
 

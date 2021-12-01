@@ -52,7 +52,7 @@ export const CategoryButton = styled.TouchableOpacity`
   border-radius: 30px;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 10px;
 `;
 
 export const BackgroundView = styled.View`
@@ -68,7 +68,7 @@ export const BackgroundView = styled.View`
 export const CategoryImage = styled.Image`
   width: 50px;
   height: 50px;
-  border-radius: 60px;
+  border-radius: 200px;
 `;
 
 export const CategoryText = styled.Text`
@@ -97,5 +97,5 @@ export const QunatityView = styled.View`
 export const QuantityText = styled.Text`
   color: black;
   font-size: 10px;
-  line-height: 0px;
+  line-height: 10px;
 `;

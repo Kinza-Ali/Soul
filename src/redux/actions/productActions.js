@@ -4,7 +4,7 @@ import productService from '../../services/ProductService';
 export const getProducts = () => async dispatch => {
   try {
     //get request
-    productService.getProducts().then(data => {
+    productService.getProductList().then(data => {
       dispatch({type: ActionTypes.GET_PRODUCTS, payload: data});
     });
   } catch (error) {
