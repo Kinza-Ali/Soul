@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 axios.defaults.baseURL =
-  'http://ec2-3-250-68-254.eu-west-1.compute.amazonaws.com:3000/api/';
+  'http://ec2-54-76-194-87.eu-west-1.compute.amazonaws.com:3000/api/';
+// axios.defaults.baseURL = 'http://10.0.2.2:3000/api/';
 // axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
 class Services {
   get = url =>
@@ -20,19 +21,18 @@ class Services {
 
   post = (url, data) =>
     new Promise((resolve, reject) => {
-      // console.log(data);
       axios
         .post(url, data)
         .then(res => {
           resolve(res.data);
         })
         .catch(error => {
-          if (error.request.response)
-            console.log(JSON.parse(error.request.response).UserMessage);
-          if (error.response.response)
-            console.log(JSON.parse(error.response.response).UserMessage);
-
-          reject(JSON.parse(error.request.response).UserMessage);
+          // if (error.request.response)
+          //   console.log(JSON.parse(error.request.response).UserMessage);
+          // if (error.response.response)
+          //   console.log(JSON.parse(error.response.response).UserMessage);
+          console.log(error + ' from services');
+          reject(error);
         });
     });
 

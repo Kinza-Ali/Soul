@@ -57,6 +57,7 @@ const Login = ({navigation}) => {
             }}
             validationSchema={validateSchema}
             onSubmit={values => {
+              console.log(values);
               dispatch(loginUser(values.email, values.password));
               setAnimating(true);
               closeActivityIndicator();
