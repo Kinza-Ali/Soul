@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// axios.defaults.baseURL = 'https://apparel-backend.herokuapp.com/api/';
 axios.defaults.baseURL =
   'http://ec2-54-76-194-87.eu-west-1.compute.amazonaws.com:3000/api/';
 // axios.defaults.baseURL = 'http://10.0.2.2:3000/api/';
