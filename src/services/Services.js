@@ -28,12 +28,12 @@ class Services {
           resolve(res.data);
         })
         .catch(error => {
-          // if (error.request.response)
-          //   console.log(JSON.parse(error.request.response).UserMessage);
-          // if (error.response.response)
-          //   console.log(JSON.parse(error.response.response).UserMessage);
-          console.log(error + ' from services');
-          reject(error);
+          if (error.request.response)
+            console.log(JSON.parse(error.request.response).UserMessage);
+          if (error.response.response)
+            console.log(JSON.parse(error.response.response).UserMessage);
+
+          reject(JSON.parse(error.request.response).UserMessage);
         });
     });
 
